@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal & Grow - Mental Wellness Community</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7F53AC;
+            /* Rich purple */
+            --primary-gradient: linear-gradient(45deg, #7F53AC 0%, #647DEE 100%);
+            --secondary: #00B4DB;
+            /* Bright blue */
+            --secondary-gradient: linear-gradient(45deg, #00B4DB 0%, #0083B0 100%);
+            --accent: #FF6B6B;
+            /* Coral red */
+            --accent-gradient: linear-gradient(45deg, #FF6B6B 0%, #FF8E53 100%);
+            --success: #00B894;
+            /* Mint green */
+            --success-gradient: linear-gradient(45deg, #00B894 0%, #00CEC9 100%);
+            --warning: #FFA502;
+            /* Orange */
+            --warning-gradient: linear-gradient(45deg, #FFA502 0%, #FF7675 100%);
+            --info: #74B9FF;
+            /* Light blue */
+            --info-gradient: linear-gradient(45deg, #74B9FF 0%, #0984E3 100%);
+            --light: #F7F9FC;
+            /* Light blue-white */
+            --dark: #2D3436;
+            /* Dark gray */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .btn-custom {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            font-size: 1.1rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            color: var(--primary);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--primary-gradient);
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+
+        .problem-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .problem-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary-gradient);
+            transition: all 0.4s ease;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+
+        .problem-card:hover::before {
+            height: 100%;
+            opacity: 1;
+        }
+
+        .problem-card:hover .feature-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .problem-card:hover h4,
+        .problem-card:hover p {
+            color: white;
+        }
+
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(127, 83, 172, 0.4);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 25px 0;
+            border: none;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: "" ";
+ position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(127, 83, 172, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .voice-feedback {
+            background: var(--light);
+            padding: 70px 0;
+            position: relative;
+        }
+
+        .voice-feedback::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            transition: all 0.4s ease;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-5px) rotate(10deg);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-section {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            transform: rotate(30deg);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .btn-custom {
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(127, 83, 172, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+            font-size: 2.2rem;
+            transition: all 0.3s ease;
+        }
+
+        /* New styles for enhanced design */
+        .card {
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .stats-card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .btn-custom {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+
+            .problem-card,
+            .step-card,
+            .testimonial-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .stats-card h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center hero-content">
+            <h1 class="animate-on-scroll">Find Your Path to Peace and Growth</h1>
+            <p class="lead animate-on-scroll">Compassionate, professional mental health support, right here in Kerala.
+                You are not alone, we are here to walk with you.</p>
+            <a href="https://wa.me/916238258336?text=I'm%20interested%20in%20booking%20a%20free%20introduction%20call"
+                target="_blank" class="btn btn-custom btn-lg animate-on-scroll">Book a Free, Confidential Introduction
+                Call</a>
+            <p class="mt-4 animate-on-scroll">Sessions available in Malayalam & English. Your privacy is our highest
+                priority.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stats-card animate-on-scroll">
+                        <i class="fas fa-users"></i>
+                        <h3>500+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card animate-on-scroll">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>15+</h3>
+                        <p>Expert Therapists</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card animate-on-scroll">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>8+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-card animate-on-scroll">
+                        <i class="fas fa-star"></i>
+                        <h3>4.9/5</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title animate-on-scroll">Are you suffering from these problems?</h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Managing Anxiety & Stress</h4>
+                        <p>Learn effective techniques to manage daily stress and anxiety for a calmer, more balanced
+                            life.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h4>Overcoming Depression & Low Mood</h4>
+                        <p>Rediscover joy and motivation with our specialized support for depression and mood disorders.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Improving Relationships</h4>
+                        <p>Strengthen your connections with couples and family therapy tailored to your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Navigating Career & Work Pressure</h4>
+                        <p>Manage workplace stress and find balance between professional and personal life.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Processing Grief & Loss</h4>
+                        <p>Find healthy ways to process and heal from grief and significant life losses.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Building Self-Esteem & Confidence</h4>
+                        <p>Develop a stronger sense of self-worth and confidence in your abilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="position-relative">
+                            <img src="startup2-1.0.0/review-screenshots/review-1.jpg" class="img-fluid rounded mb-3"
+                                alt="Client Review" style="height: 200px; object-fit: cover; width: 100%;">
+                        </div>
+                        <p>"The therapy sessions at Heal & Grow have been transformative. The counselors are incredibly
+                            understanding and professional. I've learned valuable coping mechanisms that have
+                            significantly improved my daily life."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">Anxiety Management Client</p>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="position-relative">
+                            <img src="startup2-1.0.0/review-screenshots/review-2.jpg" class="img-fluid rounded mb-3"
+                                alt="Client Review" style="height: 200px; object-fit: cover; width: 100%;">
+                        </div>
+                        <p>"The life coaching program helped me gain clarity and direction in my career. The
+                            personalized approach and practical strategies provided by the mentors have been invaluable
+                            in my personal growth journey."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <p class="text-muted mb-0">Life Coaching Client</p>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Testimonials -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="position-relative">
+                            <img src="startup2-1.0.0/review-screenshots/review-3.jpg" class="img-fluid rounded mb-3"
+                                alt="Client Review" style="height: 200px; object-fit: cover; width: 100%;">
+                        </div>
+                        <p>"After joining the resilience workshop, I feel more confident and positive about my future.
+                            The techniques I learned have become part of my daily routine."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <h5 class="mb-0">Anjali</h5>
+                                <p class="text-muted mb-0">Student</p>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="position-relative">
+                            <img src="startup2-1.0.0/review-screenshots/review-4.jpg" class="img-fluid rounded mb-3"
+                                alt="Client Review" style="height: 200px; object-fit: cover; width: 100%;">
+                        </div>
+                        <p>"The therapy sessions helped me overcome my anxiety and reconnect with my family. I'm
+                            grateful for the safe space and compassionate support I received."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <h5 class="mb-0">Manu</h5>
+                                <p class="text-muted mb-0">IT Professional</p>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Feedbacks Section -->
+            <div class="voice-feedback mt-5 rounded animate-on-scroll">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="text-center text-md-start">Voice Feedbacks</h3>
+                        <p class="text-center text-md-start">Hear from our clients about their healing journey with us.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end">
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#voiceFeedbackModal">
+                            <i class="fas fa-play-circle me-2"></i> Listen to Stories
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Feedbacks Modal -->
+            <div class="modal fade" id="voiceFeedbackModal" tabindex="-1" aria-labelledby="voiceFeedbackModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="voiceFeedbackModalLabel">Client Voice Feedbacks</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-1.jpg"
+                                                class="card-img-top" alt="Client Review"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Sarah's Story</h5>
+                                                <p class="card-text">Hear Sarah talk about her journey through anxiety
+                                                    management.</p>
+                                                <div class="alert alert-info mt-3"
+                                                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white;">
+                                                    <i class="fas fa-microphone-alt me-2"></i>
+                                                    <strong>Audio Coming Soon!</strong> We're recording authentic client
+                                                    testimonials.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-2.jpg"
+                                                class="card-img-top" alt="Client Review"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Michael's Experience</h5>
+                                                <p class="card-text">Michael shares his experience with our life
+                                                    coaching program.</p>
+                                                <div class="alert alert-info mt-3"
+                                                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white;">
+                                                    <i class="fas fa-microphone-alt me-2"></i>
+                                                    <strong>Audio Coming Soon!</strong> We're recording authentic client
+                                                    testimonials.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-3.jpg"
+                                                class="card-img-top" alt="Client Review"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Priya's Journey</h5>
+                                                <p class="card-text">Priya talks about overcoming challenges with our
+                                                    support.</p>
+                                                <div class="alert alert-info mt-3"
+                                                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white;">
+                                                    <i class="fas fa-microphone-alt me-2"></i>
+                                                    <strong>Audio Coming Soon!</strong> We're recording authentic client
+                                                    testimonials.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-4.jpg"
+                                                class="card-img-top" alt="Client Review"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">David's Testimonial</h5>
+                                                <p class="card-text">David shares how our services transformed his life.
+                                                </p>
+                                                <div class="alert alert-info mt-3"
+                                                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white;">
+                                                    <i class="fas fa-microphone-alt me-2"></i>
+                                                    <strong>Audio Coming Soon!</strong> We're recording authentic client
+                                                    testimonials.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Additional Video Content Section -->
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <h4 class="mb-3">Video Testimonials</h4>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-1.jpg"
+                                                class="card-img-top" alt="Video Testimonial"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Client Success Story</h5>
+                                                <p class="card-text">Watch how our therapy program helped transform a
+                                                    client's life.</p>
+                                                <video controls class="w-100">
+                                                    <source src="startup2-1.0.0/video/video+audio1.mp4"
+                                                        type="video/mp4">
+                                                    Your browser does not support the video element.
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="card h-100">
+                                            <img src="startup2-1.0.0/review-screenshots/review-2.jpg"
+                                                class="card-img-top" alt="Video Testimonial"
+                                                style="height: 200px; object-fit: cover;">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Therapy Session Overview</h5>
+                                                <p class="card-text">Get a glimpse of what a typical therapy session
+                                                    looks like.</p>
+                                                <video controls class="w-100">
+                                                    <source src="startup2-1.0.0/video/video+audio2.mp4"
+                                                        type="video/mp4">
+                                                    Your browser does not support the video element.
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Audio fallback simulation
+                document.addEventListener('DOMContentLoaded', function () {
+                    const audios = [
+                        { element: document.getElementById('sarahAudio'), simulation: document.getElementById('sarahSimulation') },
+                        { element: document.getElementById('michaelAudio'), simulation: document.getElementById('michaelSimulation') },
+                        { element: document.getElementById('priyaAudio'), simulation: document.getElementById('priyaSimulation') },
+                        { element: document.getElementById('davidAudio'), simulation: document.getElementById('davidSimulation') }
+                    ];
+
+                    audios.forEach(audioObj => {
+                        if (audioObj.element) {
+                            audioObj.element.addEventListener('error', function () {
+                                // Hide the audio element and show simulation
+                                this.classList.add('d-none');
+                                if (audioObj.simulation) {
+                                    audioObj.simulation.classList.remove('d-none');
+
+                                    // Simulate progress
+                                    const progressBar = audioObj.simulation.querySelector('.progress-bar');
+                                    let width = 0;
+                                    const interval = setInterval(function () {
+                                        if (width >= 100) {
+                                            clearInterval(interval);
+                                        } else {
+                                            width++;
+                                            progressBar.style.width = width + '%';
+                                        }
+                                    }, 300); // 30 seconds total
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </section>
+
+    <!-- Journey Steps Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title animate-on-scroll">Starting Your Journey is Simple & Stress-Free</h2>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-number">1</div>
+                        <h4>Book Your Free Introduction</h4>
+                        <p>A brief, 15-minute confidential call to answer your questions and ensure we are the right fit
+                            for you. No pressure, no obligation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-number">2</div>
+                        <h4>Meet Your Therapist</h4>
+                        <p>Get matched with a therapist who understands your specific needs for your first full session.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card animate-on-scroll">
+                        <div class="step-number">3</div>
+                        <h4>Begin Your Growth</h4>
+                        <p>Start your personalised journey toward healing with a dedicated professional by your side.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title animate-on-scroll">Our Community in Action</h2>
+            <p class="text-center mb-5 animate-on-scroll">Take a look at our healing community and the positive
+                environment we foster</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 animate-on-scroll">
+                        <img src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.09.08 AM.jpeg"
+                            class="card-img-top clickable-image" alt="Community Event"
+                            style="height: 250px; object-fit: cover;" data-bs-toggle="modal"
+                            data-bs-target="#imageModal"
+                            data-src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.09.08 AM.jpeg"
+                            data-title="Community Gathering"
+                            data-description="Our clients connecting and sharing experiences in a supportive environment.">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Gathering</h5>
+                            <p class="card-text">Our clients connecting and sharing experiences in a supportive
+                                environment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 animate-on-scroll">
+                        <img src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.09.44 AM.jpeg"
+                            class="card-img-top clickable-image" alt="Therapy Session"
+                            style="height: 250px; object-fit: cover;" data-bs-toggle="modal"
+                            data-bs-target="#imageModal"
+                            data-src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.09.44 AM.jpeg"
+                            data-title="Therapy in Session"
+                            data-description="Professional therapy sessions in our calming, private spaces.">
+                        <div class="card-body">
+                            <h5 class="card-title">Therapy in Session</h5>
+                            <p class="card-text">Professional therapy sessions in our calming, private spaces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 animate-on-scroll">
+                        <img src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.25 AM.jpeg"
+                            class="card-img-top clickable-image" alt="Workshop Activity"
+                            style="height: 250px; object-fit: cover;" data-bs-toggle="modal"
+                            data-bs-target="#imageModal"
+                            data-src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.25 AM.jpeg"
+                            data-title="Workshop Activity"
+                            data-description="Interactive workshops designed to build resilience and confidence.">
+                        <div class="card-body">
+                            <h5 class="card-title">Workshop Activity</h5>
+                            <p class="card-text">Interactive workshops designed to build resilience and confidence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 animate-on-scroll">
+                        <img src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.53 AM.jpeg"
+                            class="card-img-top clickable-image" alt="Celebration Moment"
+                            style="height: 250px; object-fit: cover;" data-bs-toggle="modal"
+                            data-bs-target="#imageModal"
+                            data-src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.53 AM.jpeg"
+                            data-title="Celebration Moment"
+                            data-description="Celebrating milestones and progress in our healing journey.">
+                        <div class="card-body">
+                            <h5 class="card-title">Celebration Moment</h5>
+                            <p class="card-text">Celebrating milestones and progress in our healing journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card border-0 shadow-sm h-100 animate-on-scroll">
+                        <img src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.53 AM (1).jpeg"
+                            class="card-img-top clickable-image" alt="Special Event"
+                            style="height: 300px; object-fit: cover;" data-bs-toggle="modal"
+                            data-bs-target="#imageModal"
+                            data-src="startup2-1.0.0/img/WhatsApp Image 2025-09-19 at 11.10.53 AM (1).jpeg"
+                            data-title="Special Community Event"
+                            data-description="Our special events that bring the community together for shared experiences and support.">
+                        <div class="card-body">
+                            <h5 class="card-title">Special Community Event</h5>
+                            <p class="card-text">Our special events that bring the community together for shared
+                                experiences and support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Community Image" style="max-height: 70vh;">
+                    <h4 class="mt-3" id="modalTitle"></h4>
+                    <p class="mt-2" id="modalDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="booking">
+        <div class="container cta-content">
+            <h2 class="mb-4 animate-on-scroll">Ready to Begin Your Healing Journey?</h2>
+            <p class="lead mb-4 animate-on-scroll">Take the first step towards a better you with our free, confidential
+                introduction call.</p>
+            <a href="https://wa.me/916238258336?text=I'm%20interested%20in%20booking%20a%20free%20introduction%20call"
+                target="_blank" class="btn btn-custom btn-lg animate-on-scroll">Book a Free, Confidential Introduction
+                Call</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4">Heal & Grow</h4>
+                    <p>Your journey to mental wellness starts here. We provide compassionate support, expert guidance,
+                        and holistic programs to help you heal, grow, and thrive.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="mb-4">Contact Us</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Kozhinjampara, Palakkad</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 62382 58336</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> healandgrowcommunity@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="mb-4">Follow Us</h4>
+                    <div class="mb-4">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <h5>Newsletter</h5>
+                    <p>Subscribe for mental health tips and updates.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-custom">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Heal & Grow Community. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize animations
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Audio fallback simulation
+            const audios = [
+                { element: document.getElementById('sarahAudio'), simulation: document.getElementById('sarahSimulation') },
+                { element: document.getElementById('michaelAudio'), simulation: document.getElementById('michaelSimulation') },
+                { element: document.getElementById('priyaAudio'), simulation: document.getElementById('priyaSimulation') },
+                { element: document.getElementById('davidAudio'), simulation: document.getElementById('davidSimulation') }
+            ];
+
+            audios.forEach(audioObj => {
+                if (audioObj.element) {
+                    audioObj.element.addEventListener('error', function () {
+                        // Hide the audio element and show simulation
+                        this.classList.add('d-none');
+                        if (audioObj.simulation) {
+                            audioObj.simulation.classList.remove('d-none');
+
+                            // Simulate progress
+                            const progressBar = audioObj.simulation.querySelector('.progress-bar');
+                            let width = 0;
+                            const interval = setInterval(function () {
+                                if (width >= 100) {
+                                    clearInterval(interval);
+                                } else {
+                                    width++;
+                                    progressBar.style.width = width + '%';
+                                }
+                            }, 300); // 30 seconds total
+                        }
+                    });
+                }
+            });
+
+            // Image modal functionality
+            const clickableImages = document.querySelectorAll('.clickable-image');
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            clickableImages.forEach(image => {
+                image.addEventListener('click', function () {
+                    const src = this.getAttribute('data-src');
+                    const title = this.getAttribute('data-title');
+                    const description = this.getAttribute('data-description');
+
+                    modalImage.src = src;
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

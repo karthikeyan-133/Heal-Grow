@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Heal And Grow Community</title>
+    <title>Heal & Grow Community</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -44,7 +44,7 @@
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123 Street, Kozhinjampara, Palakkad</small>
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Kozhinjampara, Palakkad</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+91 62382 58336</small>
                     <small class="text-light"><i class="fa fa-envelope-open me-2"></i>healandgrowcommunity@gmail.com</small>
                 </div>
@@ -65,9 +65,9 @@
 
       <!-- Navbar & Carousel Start -->
       <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-4 py-3 py-lg-0">
             <a href="index.html" class="navbar-brand p-0">
-                <img src="img/heal & grow 02.png" alt="Heal and Grow Logo" class="img-fluid" style="height: 50px;">
+                <img src="img/heal-and-grow-logo.png" alt="Heal and Grow Logo" class="img-fluid" style="height: 50px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -79,53 +79,104 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Service Therapy and Counseling</a>
-                            <a href="detail.html" class="dropdown-item">Service Personal Mentorship | Life Coaching</a>
-                            <a href="blog.html" class="dropdown-item">Service Wellness Programs</a>
-                            <a href="detail.html" class="dropdown-item">Service Workshops and Seminars</a>
+                            <a href="service-therapy.html" class="dropdown-item">Therapy and Counseling</a>
+                            <a href="service-mentorship.html" class="dropdown-item">Personal Mentorship | Life Coaching</a>
+                            <a href="service-wellness.html" class="dropdown-item">Wellness Programs</a>
+                            <a href="service-workshops.html" class="dropdown-item">Workshops and Seminars</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Problems</a>
                         <div class="dropdown-menu m-0">
-                            <a href="price.html" class="dropdown-item">Problem Anxiety & Stress</a>
-                            <a href="feature.html" class="dropdown-item">Problem Trauma & PTSD</a>
-                            <a href="team.html" class="dropdown-item">Problem Depression & Mood Disorder</a>
-                            <a href="testimonial.html" class="dropdown-item">Problem Parenting & Child Behavioral Issues</a>
-                            <a href="quote.html" class="dropdown-item">Problem Anger Management</a>
-                            <a href="price.html" class="dropdown-item">Problem Relationship Issues</a>
-                            <a href="feature.html" class="dropdown-item">Problem Queer Affirmative Concerns</a>
-                            <a href="team.html" class="dropdown-item">Problem Work Stress & Burnout</a>
-                            <a href="testimonial.html" class="dropdown-item">Problem Grief Counselling</a>
-                            
+                            <a href="problem-anxiety.html" class="dropdown-item">Anxiety & Stress</a>
+                            <a href="problem-trauma.html" class="dropdown-item">Trauma & PTSD</a>
+                            <a href="problem-depression.html" class="dropdown-item">Depression & Mood Disorder</a>
+                            <a href="problem-parenting.html" class="dropdown-item">Parenting & Child Behavioral Issues</a>
+                            <a href="problem-anger.html" class="dropdown-item">Anger Management</a>
+                            <a href="problem-relationship.html" class="dropdown-item">Relationship Issues</a>
+                            <a href="problem-queer.html" class="dropdown-item">Queer Affirmative Concerns</a>
+                            <a href="problem-work.html" class="dropdown-item">Work Stress & Burnout</a>
+                            <a href="problem-grief.html" class="dropdown-item">Grief Counselling</a>
                         </div>
                     </div>
+                    <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#hiringModal">Hiring</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-primary py-2 px-4 ms-3">Contact Us</a>
+                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                <a href="#" class="btn btn-primary py-2 px-4 ms-3 d-none d-lg-inline-block" data-bs-toggle="modal" data-bs-target="#hiringModal">Join Our Team</a>
             </div>
         </nav>
+
+        <!-- Hiring Form Modal -->
+        <div class="modal fade" id="hiringModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Join Our Team</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="hiringForm" onsubmit="submitHiringForm(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
+                                        <label for="phone">Your Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="experience" placeholder="Your Experience" style="height: 100px" required></textarea>
+                                        <label for="experience">Your Experience</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" placeholder="Why do you want to join us?" style="height: 100px" required></textarea>
+                                        <label for="message">Why do you want to join us?</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit Application</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="img/11759.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Heal And Grow Community</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Healing starts here, with Heal And Grow</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Heal & Grow </h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Healing starts here, with Heal & Grow</h1>
                             <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
                             <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/11861.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Heal And Grow Community</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Heal And Grow Stories Hear From Our Clinets</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Heal & Grow </h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Heal & Grow Stories Hear From Our Clinets</h1>
                             <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
                             <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
                         </div>
@@ -171,44 +222,62 @@
     <div class="container-fluid facts py-5 pt-lg-0">
         <div class="container py-5 pt-lg-0">
             <div class="row gx-0">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
                     <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
                             <i class="fa fa-users text-primary"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Happy Clients</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">1000</h1>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                <div class="col-lg-6 wow zoomIn" data-wow-delay="0.3s">
                     <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-check text-white"></i>
+                            <i class="fa fa-globe text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="text-primary mb-0">Projects Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-award text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Win Awards</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h5 class="text-primary mb-0">Countries</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">10</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Facts Start -->
+    <!-- Facts End -->
 
+    <!-- Video Section Start 
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Featured Video</h5>
+                <h1 class="mb-0">Watch Our Latest Video</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="video-item bg-light rounded-4 overflow-hidden shadow-lg">
+                        <div class="position-relative">
+                            <div class="ratio ratio-16x9">
+                                <video class="w-100" controls style="border-radius: 15px;">
+                                    <source src="video/videoheader.mp4" type="video/mp4">
+                                    <source src="video/your-video.webm" type="video/webm">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2">Understanding Mental Health</h5>
+                            <p class="mb-0">Learn about the importance of mental health and how to maintain it in your daily life. Our expert therapists share valuable insights and practical tips for better mental well-being.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     Video Section End -->
 
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -217,9 +286,9 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">Heal And Grow Community</h1>
+                        <h1 class="mb-0">Heal & Grow</h1>
                     </div>
-                    <p class="mb-4">"Heal And Grow is a comprehensive mental wellness platform that empowers individuals to achieve emotional balance, cultivate positive habits, and unlock their full potential. We offer personalized couseling and mentorship programs, led by experienced professionals, to support individuals in overcoming mental health challenges. Additionally, our engaging mental health classes provide valuable insights and practical tools for maintaining optimal mental well-being. Our mission is to provide a safe, supportive,and non-judgmental space for individuals to heal, grow, and thrive".</p>
+                    <p class="mb-4">"Heal & Grow is a comprehensive mental wellness platform that empowers individuals to achieve emotional balance, cultivate positive habits, and unlock their full potential. We offer personalized couseling and mentorship programs, led by experienced professionals, to support individuals in overcoming mental health challenges. Additionally, our engaging mental health classes provide valuable insights and practical tools for maintaining optimal mental well-being. Our mission is to provide a safe, supportive,and non-judgmental space for individuals to heal, grow, and thrive".</p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                             <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Therapy and Counseling</h5>
@@ -243,7 +312,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/11750.jpg" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -257,7 +326,7 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
-                <h1 class="mb-0">Heal And Grow Community</h1>
+                <h1 class="mb-0">Heal & Grow</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4">
@@ -280,7 +349,7 @@
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/feature.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/women-s-day-celebration-with-flower.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -312,7 +381,7 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">Heal And Grow Community Services</h1>
+                <h1 class="mb-0">Heal & Grow Services</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
@@ -332,7 +401,7 @@
                         <div class="service-icon">
                             <i class="fa fa-chart-pie text-white"></i>
                         </div>
-                        <h4 class="mb-3">Service Personal Mentorship | Life Coaching</h4>
+                        <h4 class="mb-3">Personal Mentorship | Life Coaching</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
                         <a class="btn btn-lg btn-primary rounded" href="">
                             <i class="bi bi-arrow-right"></i>
@@ -344,7 +413,7 @@
                         <div class="service-icon">
                             <i class="fa fa-code text-white"></i>
                         </div>
-                        <h4 class="mb-3">Service Wellness Programs</h4>
+                        <h4 class="mb-3">Wellness Programs</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
                         <a class="btn btn-lg btn-primary rounded" href="">
                             <i class="bi bi-arrow-right"></i>
@@ -356,7 +425,7 @@
                         <div class="service-icon">
                             <i class="fab fa-android text-white"></i>
                         </div>
-                        <h4 class="mb-3">Service Workshops and Seminars</h4>
+                        <h4 class="mb-3">Workshops and Seminars</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
                         <a class="btn btn-lg btn-primary rounded" href="">
                             <i class="bi bi-arrow-right"></i>
@@ -387,7 +456,7 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">How It Works</h5>
-                        <h1 class="mb-0">How Heal and Grow Works: Your Journey to Wellness</h1>
+                        <h1 class="mb-0">How Heal & Grow Works: Your Journey to Wellness</h1>
                     </div>
                     <div class="row gx-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
@@ -397,7 +466,7 @@
                             <h5 class="mb-4"><i class="fa fa-users text-primary me-3"></i>Expert Therapists</h5>
                         </div>
                     </div>
-                    <p class="mb-4">At Heal and Grow, we believe in a comprehensive approach to mental wellness. Our process is designed to be simple, supportive, and effective, guiding you through each step of your journey to better mental health.</p>
+                    <p class="mb-4">At Heal & Grow, we believe in a comprehensive approach to mental wellness. Our process is designed to be simple, supportive, and effective, guiding you through each step of your journey to better mental health.</p>
                     
                     <div class="row g-4 mb-4">
                         <div class="col-md-6 wow zoomIn" data-wow-delay="0.2s">
@@ -507,186 +576,781 @@
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
-                <h1 class="mb-0">Heal And Grow Stories Hear From Our Clients</h1>
+                <h5 class="fw-bold text-primary text-uppercase">Client Testimonials</h5>
+                <h1 class="mb-0">What Our Clients Say About Us</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
+                <div class="testimonial-card bg-light rounded shadow-sm">
+                    <div class="testimonial-img">
+                        <img src="img/client-review-1.jpg" alt="Client Review 1" width="200" height="200">
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    <div class="p-4 text-center">
+                        <h4 class="text-primary mb-1">Sarah Johnson</h4>
+                        <small class="text-uppercase mb-3 d-block">Anxiety Management</small>
+                        <button class="btn btn-primary rounded-circle play-btn" onclick="showAudioPlayer('audio1', 'Sarah Johnson', 'Anxiety Management')">
+                            <i class="fas fa-play"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
+                <div class="testimonial-card bg-light rounded shadow-sm">
+                    <div class="testimonial-img">
+                        <img src="img/client-review-2.jpg" alt="Client Review 2" width="200" height="200">
                     </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    <div class="p-4 text-center">
+                        <h4 class="text-primary mb-1">Michael Chen</h4>
+                        <small class="text-uppercase mb-3 d-block">Life Coaching</small>
+                        <button class="btn btn-primary rounded-circle play-btn" onclick="showAudioPlayer('audio2', 'Michael Chen', 'Life Coaching')">
+                            <i class="fas fa-play"></i>
+                        </button>
                     </div>
                 </div>
+                <div class="testimonial-card bg-light rounded shadow-sm">
+                    <div class="testimonial-img">
+                        <img src="img/client-review-3.jpg" alt="Client Review 3" width="200" height="200">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-primary mb-1">Priya Sharma</h4>
+                        <small class="text-uppercase mb-3 d-block">Stress Management</small>
+                        <button class="btn btn-primary rounded-circle play-btn" onclick="showAudioPlayer('audio3', 'Priya Sharma', 'Stress Management')">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-light rounded shadow-sm">
+                    <div class="testimonial-img">
+                        <img src="img/client-review-4.jpg" alt="Client Review 4" width="200" height="200">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="text-primary mb-1">David Wilson</h4>
+                        <small class="text-uppercase mb-3 d-block">Relationship Counseling</small>
+                        <button class="btn btn-primary rounded-circle play-btn" onclick="showAudioPlayer('audio4', 'David Wilson', 'Relationship Counseling')">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-center mt-4">
+                <a href="index.html#testimonials" class="btn btn-primary py-3 px-5">Read More Reviews</a>
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
 
+    <style>
+        .testimonial-icon {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .testimonial-item:hover .testimonial-icon {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .testimonial-item {
+            transition: all 0.3s ease;
+        }
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+        }
+        .audio-player {
+            transition: all 0.3s ease;
+        }
+        .audio-player:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        }
+        .progress {
+            cursor: pointer;
+            transition: height 0.2s ease;
+        }
+        .progress:hover {
+            height: 8px !important;
+        }
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.1);
+        }
+        .form-range::-webkit-slider-thumb {
+            background: var(--bs-primary);
+        }
+        .form-range::-moz-range-thumb {
+            background: var(--bs-primary);
+        }
+        
+        /* Audio Player Modal Styles */
+        .audio-player-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .audio-player-modal.show {
+            display: block;
+        }
+        
+        .audio-player-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .audio-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .audio-info h3 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        
+        .audio-info p {
+            margin: 0;
+            color: #666;
+        }
+        
+        .progress-container {
+            margin-bottom: 15px;
+        }
+        
+        .progress {
+            height: 5px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #007bff;
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+        }
+        
+        .volume-control input {
+            width: 80px;
+            margin-left: 10px;
+        }
+        
+        .btn.play-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+    </style>
 
-    <!-- Team Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Meet our Therapists</h5>
-                <h5 class="text-black text-uppercase mb-3 animated slideInDown">We believe in the power of guidance, empathy, and shared experience to help individuals navigate their mental health journeys.</h5>
+    <script>
+        let currentAudioId = null;
+        let currentAudioInfo = null;
+        let isPlaying = false;
+        let timeUpdateListener = null;
+        let simulationInterval = null;
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+
+        function showAudioPlayer(audioId, name, role) {
+            console.log('Showing audio player for:', audioId, name, role);
+            const modal = document.getElementById('audioPlayerModal');
+            const audio = document.getElementById(audioId);
+            
+            if (!audio) {
+                console.error('Audio element not found for ID:', audioId);
+                alert('Audio element not found');
+                return;
+            }
+
+            // Stop any currently playing audio
+            if (currentAudioId && currentAudioId !== audioId) {
+                const currentAudio = document.getElementById(currentAudioId);
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                }
+            }
+
+            currentAudioId = audioId;
+            currentAudioInfo = { name, role };
+            isPlaying = false;
+
+            // Update modal content
+            document.querySelector('.audio-name').textContent = name;
+            document.querySelector('.audio-role').textContent = role;
+
+            // Show modal
+            modal.classList.add('show');
+
+            // Initialize time display
+            const currentTimeDisplay = document.querySelector('.audio-player-modal .current-time');
+            const durationDisplay = document.querySelector('.audio-player-modal .duration');
+            
+            // Reset play button
+            const playButton = document.querySelector('.audio-player-modal .play-btn i');
+            playButton.className = 'fas fa-play';
+            
+            // Reset progress bar
+            const progressBar = document.querySelector('.audio-player-modal .progress-bar');
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+            
+            if (currentTimeDisplay) {
+                currentTimeDisplay.textContent = '0:00';
+            }
+            
+            // Update duration when audio metadata is loaded
+            const onLoadedMetadata = function() {
+                if (durationDisplay && audio.duration) {
+                    durationDisplay.textContent = formatTime(audio.duration);
+                }
+            };
+            
+            audio.addEventListener('loadedmetadata', onLoadedMetadata);
+            
+            // Add error handling
+            audio.addEventListener('error', function(e) {
+                console.error('Audio error for ' + audioId + ':', e);
+                let errorMsg = 'Error loading audio file. ';
+                switch (audio.error.code) {
+                    case 1: errorMsg += 'MEDIA_ERR_ABORTED - Fetching process aborted by user.'; break;
+                    case 2: errorMsg += 'MEDIA_ERR_NETWORK - Error occurred when downloading.'; break;
+                    case 3: errorMsg += 'MEDIA_ERR_DECODE - Error occurred when decoding.'; break;
+                    case 4: errorMsg += 'MEDIA_ERR_SRC_NOT_SUPPORTED - Audio not supported.'; break;
+                    default: errorMsg += 'Unknown error.'; break;
+                }
+                // Only show alert if it's a real error, not a missing file
+                if (audio.error.code !== 4) {
+                    alert(errorMsg);
+                }
+            });
+            
+            // Clean up event listeners when audio ends
+            audio.onended = function() {
+                isPlaying = false;
+                if (playButton) playButton.className = 'fas fa-play';
+                if (progressBar) progressBar.style.width = '0%';
+                audio.currentTime = 0;
+                if (currentTimeDisplay) currentTimeDisplay.textContent = '0:00';
+                
+                // Remove time update listener
+                if (timeUpdateListener) {
+                    audio.removeEventListener('timeupdate', timeUpdateListener);
+                    timeUpdateListener = null;
+                }
+                
+                // Clear simulation interval
+                if (simulationInterval) {
+                    clearInterval(simulationInterval);
+                    simulationInterval = null;
+                }
+            };
+        }
+
+        function closeAudioPlayer() {
+            const modal = document.getElementById('audioPlayerModal');
+            if (currentAudioId) {
+                const audio = document.getElementById(currentAudioId);
+                if (audio) {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    // Reset play button icon
+                    const playButton = document.querySelector('.audio-player-modal .play-btn i');
+                    if (playButton) {
+                        playButton.className = 'fas fa-play';
+                    }
+                    
+                    // Remove time update listener
+                    if (timeUpdateListener) {
+                        audio.removeEventListener('timeupdate', timeUpdateListener);
+                        timeUpdateListener = null;
+                    }
+                    
+                    // Clear simulation interval
+                    if (simulationInterval) {
+                        clearInterval(simulationInterval);
+                        simulationInterval = null;
+                    }
+                }
+            }
+            isPlaying = false;
+            modal.classList.remove('show');
+        }
+
+        function simulateAudioProgress(progressBar, currentTimeDisplay, durationDisplay) {
+            // Clear any existing interval
+            if (simulationInterval) {
+                clearInterval(simulationInterval);
+            }
+            
+            let currentTime = 0;
+            const duration = 90; // 1:30 in seconds
+            
+            // Set initial duration display
+            if (durationDisplay) durationDisplay.textContent = formatTime(duration);
+            
+            simulationInterval = setInterval(() => {
+                currentTime++;
+                if (currentTime > duration) {
+                    // End of simulation
+                    if (simulationInterval) {
+                        clearInterval(simulationInterval);
+                        simulationInterval = null;
+                    }
+                    if (progressBar) progressBar.style.width = '100%';
+                    if (currentTimeDisplay) currentTimeDisplay.textContent = formatTime(duration);
+                    
+                    // Trigger end event
+                    isPlaying = false;
+                    const playButton = document.querySelector('.audio-player-modal .play-btn i');
+                    if (playButton) playButton.className = 'fas fa-play';
+                    if (progressBar) progressBar.style.width = '0%';
+                    if (currentTimeDisplay) currentTimeDisplay.textContent = '0:00';
+                    return;
+                }
+                
+                const progress = (currentTime / duration) * 100;
+                if (progressBar) progressBar.style.width = progress + '%';
+                if (currentTimeDisplay) currentTimeDisplay.textContent = formatTime(currentTime);
+            }, 1000);
+        }
+
+        function toggleAudio(audioId) {
+            console.log('Toggling audio for:', audioId);
+            const audio = document.getElementById(audioId);
+            if (!audio) {
+                console.error('Audio element not found for ID:', audioId);
+                return;
+            }
+
+            const playButton = document.querySelector('.audio-player-modal .play-btn i');
+            const progressBar = document.querySelector('.audio-player-modal .progress-bar');
+            const currentTimeDisplay = document.querySelector('.audio-player-modal .current-time');
+            const durationDisplay = document.querySelector('.audio-player-modal .duration');
+
+            if (!isPlaying) {
+                console.log('Attempting to play audio');
+                
+                // Remove any existing time update listener
+                if (timeUpdateListener) {
+                    audio.removeEventListener('timeupdate', timeUpdateListener);
+                }
+                
+                // Clear any existing simulation
+                if (simulationInterval) {
+                    clearInterval(simulationInterval);
+                    simulationInterval = null;
+                }
+                
+                // Check if audio file exists and is valid
+                if (audio.readyState === 0) {
+                    // Audio not loaded, simulate playback
+                    console.log('Audio file not available, simulating playback');
+                    isPlaying = true;
+                    if (playButton) playButton.className = 'fas fa-pause';
+                    simulateAudioProgress(progressBar, currentTimeDisplay, durationDisplay);
+                    return;
+                }
+                
+                const playPromise = audio.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('Audio playing successfully');
+                        isPlaying = true;
+                        if (playButton) playButton.className = 'fas fa-pause';
+                        
+                        // Update duration display
+                        if (durationDisplay && audio.duration) {
+                            durationDisplay.textContent = formatTime(audio.duration);
+                        } else if (durationDisplay) {
+                            // Set a default duration if not available
+                            durationDisplay.textContent = '0:00';
+                        }
+                        
+                        // Set up time update listener
+                        timeUpdateListener = function() {
+                            if (audio.duration) {
+                                const progress = (audio.currentTime / audio.duration) * 100;
+                                if (progressBar) progressBar.style.width = progress + '%';
+                                if (currentTimeDisplay) currentTimeDisplay.textContent = formatTime(audio.currentTime);
+                            }
+                        };
+                        
+                        audio.addEventListener('timeupdate', timeUpdateListener);
+                    }).catch(error => {
+                        console.error('Playback failed:', error);
+                        // Only show alert if it's not an abort error (which happens when pausing quickly)
+                        if (error.name !== 'AbortError') {
+                            // Check if it's a missing source error
+                            if (error.message && error.message.includes('source')) {
+                                // Simulate playback as fallback
+                                console.log('Audio source error, simulating playback');
+                                isPlaying = true;
+                                if (playButton) playButton.className = 'fas fa-pause';
+                                simulateAudioProgress(progressBar, currentTimeDisplay, durationDisplay);
+                            } else {
+                                alert('Failed to play audio: ' + error.message);
+                                isPlaying = false;
+                                if (playButton) playButton.className = 'fas fa-play';
+                            }
+                        } else {
+                            isPlaying = false;
+                            if (playButton) playButton.className = 'fas fa-play';
+                        }
+                    });
+                }
+            } else {
+                console.log('Pausing audio');
+                audio.pause();
+                isPlaying = false;
+                if (playButton) playButton.className = 'fas fa-play';
+                
+                // Clear simulation if it was running
+                if (simulationInterval) {
+                    clearInterval(simulationInterval);
+                    simulationInterval = null;
+                }
+            }
+        }
+
+        function setVolume(audioId, value) {
+            const audio = document.getElementById(audioId);
+            if (!audio) return;
+
+            const volumeIcon = document.querySelector('.audio-player-modal .fa-volume-up');
+            
+            audio.volume = value / 100;
+            audio.muted = false;
+            
+            if (value == 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (value < 50) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+
+        function toggleMute(audioId) {
+            const audio = document.getElementById(audioId);
+            if (!audio) return;
+
+            const muteButton = document.querySelector('.audio-player-modal .fa-volume-up');
+            
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.className = 'fas fa-volume-up';
+            } else {
+                audio.muted = true;
+                muteButton.className = 'fas fa-volume-mute';
+            }
+        }
+
+        // Add click event to progress bar
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.audio-player-modal .progress');
+            if (progressBar) {
+                progressBar.addEventListener('click', function(e) {
+                    if (!currentAudioId) return;
+                    const audio = document.getElementById(currentAudioId);
+                    if (!audio) return;
+
+                    const rect = this.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    audio.currentTime = pos * audio.duration;
+                });
+            }
+        });
+    </script>
+
+
+
+    <style>
+        .team-img {
+            position: relative;
+            overflow: hidden;
+        }
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(9, 30, 62, 0.85);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 2;
+        }
+        .team-img:hover .team-overlay,
+        .team-img:focus .team-overlay {
+            opacity: 1;
+        }
+        .team-details {
+            padding: 20px;
+            text-align: left;
+        }
+        .team-details ul {
+            padding-left: 18px;
+            margin-bottom: 0;
+        }
+        .team-details li {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+    </style>
+
+
+
+ <!-- Team Start -->
+ <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-primary text-uppercase">Meet our Therapists</h5>
+            <h5 class="text-black text-uppercase mb-3 animated slideInDown">
+                We believe in the power of guidance, empathy, and shared experience to help individuals navigate their mental health journeys.
+            </h5>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/sivadas.jpg" alt="SIVADAS GOPALAKRISHNAN">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>SIVADAS GOPALAKRISHNAN</h5>
+                                <p class="text-uppercase mb-2"><strong>Consultant Psychologist</strong></p>
+                                <ul>
+                                    <li>Certified Spiritual Counsellor</li>
+                                    <li>Train The Trainer (IBOEHS, USA)</li>
+                                    <li>Cognitive Behaviour Therapist</li>
+                                    <li>Certified Suicidal Prevention Gatekeeper</li>
+                                    <li>Innerchild Healing Therapist</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">SIVADAS GOPALAKRISHNAN</h4>
+                        <p class="text-uppercase m-0">Consultant Psychologist</p>
+                    </div>
+                </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/sivadas.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/jaicemol.jpg" alt="JAICEMOL DINOOP">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>JAICEMOL DINOOP</h5>
+                                <p class="text-uppercase mb-2"><strong>Consultant Psychologist</strong></p>
+                                <ul>
+                                    <li>MSC in Counselling Psychology</li>
+                                    <li>Spiritual Counsellor Certification</li>
+                                    <li>Heal your Inner Child Diploma</li>
+                                    <li>Professional Cognitive Behavioural Therapy (CBT)</li>
+                                    <li>Certification in Cognitive Behavioural Therapy (CBT) for Depression</li>
+                                    <li>Anxiety, Phobia and panic Attacks</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">SIVADAS GOPALAKRISHNAN</h4>
-                            <p class="text-uppercase m-0">Consultant Psychologist</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/jaicemol.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">JAICEMOL DINOOP</h4>
-                            <p class="text-uppercase m-0">Consultant Psychologist</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/rithu.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">RITHU NITHIN</h4>
-                            <p class="text-uppercase m-0">Mentor & Trainer</p>
-                        </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">JAICEMOL DINOOP</h4>
+                        <p class="text-uppercase m-0">Consultant Psychologist</p>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/veena.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/theraptyclient.jpg" alt="SANOOB L">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>SANOOB L</h5>
+                                <p class="text-uppercase mb-2"><strong>Counselling Psychologist</strong></p>
+                                <ul>
+                                    <li>MSc Counseling Psychology</li>
+                                    <li>PG Diploma in Counseling Psychology</li>
+                                    <li>Cognitive Behavioral Therapy (CBT) techniques</li>
+                                    <li>Acceptance and Commitment Therapy (ACT) techniques</li>
+                                    <li>Rational Emotive Behaviour Therapy(REBT) techniques</li>
+                                    <li>Motivational Enhancement Therapy (MET) techniques</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">VEENA J MENON</h4>
-                            <p class="text-uppercase m-0">Confidence,Life and Mindset Coach</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/renjitha.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">RENJITHA S</h4>
-                            <p class="text-uppercase m-0">Mentor & Trainer</p>
-                        </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">SANOOB L</h4>
+                        <p class="text-uppercase m-0">Counselling Psychologist</p>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/bhavath-1.jpg" alt="BHAVATH C BAIJU">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>BHAVATH C BAIJU</h5>
+                                <p class="text-uppercase mb-2"><strong>Online Counselling Psychologist</strong></p>
+                                <ul>
+                                    <li>MSc Counseling & Spiritual Health</li>
+                                    <li>Postgraduate Diploma in Counselling and Spiritual Health</li>
+                                    <li>Stress management, emotional regulation, crisis responce, and ethical practice</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">SIMLA SL</h4>
-                            <p class="text-uppercase m-0">Mentor & Trainer</p>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">BHAVATH C BAIJU</h4>
+                        <p class="text-uppercase m-0">Online Counselling Psychologist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/rafi1.jpg" alt="MUHAMMED RAFI">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>MUHAMMED RAFI</h5>
+                                <p class="text-uppercase mb-2"><strong>Psychology Counsellor & Enneagram Trainer</strong></p>
+                                <ul>
+                                    <li>Relationship Issues</li>
+                                    <li>Addiction</li>
+                                    <li>Mentoring</li>
+                                    <li>Personality Development</li>
+                                    <li>Career Development</li>
+                                    <li>Meditation & Healing</li>
+                                </ul>
+                            </div>
                         </div>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">MUHAMMED RAFI</h4>
+                        <p class="text-uppercase m-0">Psychology Counsellor & Enneagram Trainer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/rithu.jpg" alt="RITHU NITHIN">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>RITHU NITHIN</h5>
+                                <p class="text-uppercase mb-2"><strong>Mentor & Trainer</strong></p>
+                                <ul>
+                                    <li>Certified Life Coach</li>
+                                    <li>Motivational speaker and trainer</li>
+                                    <li>Specializes in personal growth and confidence</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">RITHU NITHIN</h4>
+                        <p class="text-uppercase m-0">Mentor & Trainer</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row g-5 mt-2">
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/veena1.png" alt="VEENA J MENON">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>VEENA MENON</h5>
+                                <p class="text-uppercase mb-2"><strong>Life and Mindset Coach</strong></p>
+                                <ul>
+                                    <li>Social Anxiety</li>
+                                    <li>Improve Self Confidence Personality Development</li>
+                                    <li>Building Systematic Lifestyle</li>
+                                    <li>Mentoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">VEENA MENON</h4>
+                        <p class="text-uppercase m-0">Life and Mindset Coach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="team-item bg-light rounded overflow-hidden text-center">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/renjitha.jpg" alt="RENJITHA S">
+                        <div class="team-overlay">
+                            <div class="team-details">
+                                <h5>RENJITHA S</h5>
+                                <p class="text-uppercase mb-2"><strong>Mentor & Trainer</strong></p>
+                                <ul>
+                                    <li>Certified Counsellor</li>
+                                    <li>Diploma in Hypnotic Counselling and Wellness</li>
+                                    <li>Experience in group facilitation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h4 class="text-primary mb-1">RENJITHA S</h4>
+                        <p class="text-uppercase m-0">Mentor & Trainer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <!-- Empty column for spacing -->
+            </div>
+        </div>
     </div>
-    <!-- Team End -->
-
+</div>
+<!-- Team End -->
 
     <!-- Blog Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -695,228 +1359,146 @@
                 <h5 class="fw-bold text-primary text-uppercase">Heal And Grow Community</h5>
                 <h1 class="mb-0">Are you suffering from these problems?</h1>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+            <div class="row g-3">
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-brain text-white"></i>
                             </div>
-                            <h4 class="mb-3">Anxiety & Stress Management</h4>
-                            <p>Stress and anxiety are both natural reactions to threatening or worring situations that are part of the body's fight or flight responce.</p>
-                            
+                            <h6 class="mb-2">Anxiety & Stress</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Stress and anxiety are natural reactions to threatening situations.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-cloud text-white"></i>
                             </div>
-                            <h4 class="mb-3">Depression & Disorders</h4>
-                            <p>Disorders It can feel like a constant weight, making everyday life challenging. They show up as hopelessness, helplessness & worthlessness.</p>
-                            
+                            <h6 class="mb-2">Depression</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">It can feel like a constant weight, making life challenging.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-heart-broken text-white"></i>
                             </div>
-                            <h4 class="mb-3">Trauma</h4>
-                            <p>Trauma and PTSD bring distressing memories and flashbacks, making it hard to feel safe or trust, often disrupting daily life.</p>
-                            
+                            <h6 class="mb-2">Trauma</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Trauma and PTSD bring distressing memories and flashbacks.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.2s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-users text-white"></i>
                             </div>
-                            <h4 class="mb-3">Relationship Issues</h4>
-                            <p>Conflicts, miscommunication, and emotional distance in relationships can lead to dissatisfaction, making it difficult to maintain connection and trust.</p>
-                            
+                            <h6 class="mb-2">Relationships</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Conflicts and emotional distance affect relationships.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.5s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-tear text-white"></i>
                             </div>
-                            <h4 class="mb-3">Grief Counselling</h4>
-                            <p>Grief after loss feels heavy, leaving a sense of emptiness and sadness that deeply impacts one's ability to move forward.</p>
-                            
+                            <h6 class="mb-2">Grief</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Grief leaves a sense of emptiness and sadness.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.8s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-fire text-white"></i>
                             </div>
-                            <h4 class="mb-3">Anger Management</h4>
-                            <p>Uncontrolled anger strains relationships, affects decision-making, and can lead to regret, but managing it brings emotional stability and healthier interactions.</p>
-                            
+                            <h6 class="mb-2">Anger</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Uncontrolled anger affects relationships and decisions.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+            <div class="row g-3 mt-2">
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-rainbow text-white"></i>
                             </div>
-                            <h4 class="mb-3">Queer Affirmative Therapy</h4>
-                            <p>Navigating societal judgment and identity struggles can affect mental health, self-esteem, and authentic relationships.</p>
-                            
+                            <h6 class="mb-2">Queer Therapy</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Navigating identity struggles affects mental health.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-briefcase text-white"></i>
                             </div>
-                            <h4 class="mb-3">Emotional Intelligence Training</h4>
-                            <p>Navigating societal judgment and identity struggles can affect mental health, self-esteem, and authentic relationships.</p>
-                            
+                            <h6 class="mb-2">Work Stress</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Constant pressure leads to burnout and reduced productivity.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-baby text-white"></i>
                             </div>
-                            <h4 class="mb-3">Work Stress & Burnout</h4>
-                            <p>Constant pressure and exhaustion from work can lead to burnout, making it difficult to focus, maintain productivity, and enjoy life.</p>
-                            
+                            <h6 class="mb-2">Parenting</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Managing child behavior while maintaining well-being.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.2s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-spa text-white"></i>
                             </div>
-                            <h4 class="mb-3">Parenting & Child Behavioral Issues</h4>
-                            <p>Managing a child's behavioral challenges while balancing your own well-being can feel overwhelming without proper support.</p>
-                            
+                            <h6 class="mb-2">Mindfulness</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Practice mindfulness for better mental health.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.5s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-spa text-white"></i>
                             </div>
-                            <h4 class="mb-3">Mindfulness and Meditation</h4>
-                            <p>Managing a child's behavioral challenges while balancing your own well-being can feel overwhelming without proper support.</p>
-                            
+                            <h6 class="mb-2">Holistic Health</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Comprehensive approach to mental wellness.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">HEAL AND GROW</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                <div class="col-lg-2 col-md-4 col-sm-6 wow slideInUp" data-wow-delay="1.8s">
+                    <div class="blog-item bg-light rounded overflow-hidden h-100 border-start border-4 border-primary">
+                        <div class="p-3 text-center">
+                            <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="fa fa-star text-white"></i>
                             </div>
-                            <h4 class="mb-3">Holistic Health Practices</h4>
-                            <p>Managing a child's behavioral challenges while balancing your own well-being can feel overwhelming without proper support.</p>
-                            
+                            <h6 class="mb-2">Life Coaching</h6>
+                            <p class="mb-0 small" style="font-size: 0.75rem;">Personal guidance for life improvement.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
-
         </div>
     </div>
-    <!-- Blog Start -->
+    <!-- Blog End -->
 
 
     <!-- Vendor Start 
@@ -940,96 +1522,7 @@
      Vendor End -->
     
 
-   <!-- Footer Start -->
-   <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-4 col-md-6 footer-about">
-                <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="img/heal & grow 02.png" alt="Heal and Grow Logo" class="img-fluid" style="height: 60px;">
-                    </a>
-                    <p class="mt-3 mb-4">At Heal and Grow, we believe in a comprehensive approach to mental wellness. Our process is designed to be simple, supportive, and effective, guiding you through each step of your journey to better mental health.</p>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                            <button class="btn btn-dark">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-6">
-                <div class="row gx-5">
-                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Get In Touch</h3>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <p class="mb-0">123 Street, New York, USA</p>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">info@example.com</p>
-                        </div>
-                        <div class="d-flex mb-2">
-                            <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">+012 345 67890</p>
-                        </div>
-                        <div class="d-flex mt-4">
-                            <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                            <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                            <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Quick Links</h3>
-                        </div>
-                        <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                            <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="text-light mb-0">Popular Links</h3>
-                        </div>
-                        <div class="link-animated d-flex flex-column justify-content-start">
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                            <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid text-white" style="background: #061429;">
-    <div class="container text-center">
-        <div class="row justify-content-end">
-            <div class="col-lg-8 col-md-6">
-                <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="healandgrowcommunity.com">healandgrowcommunity.com. All Rights Reserved. 
-                    
-                    <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed by <a class="text-white border-bottom" href="">KNV 13</a></p>
-                    <br>Distributed By: <a class="border-bottom" href="slickerconnect.com" target="_blank">Slickerconnect.com</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+
 
 
     <!-- Back to Top -->
@@ -1047,6 +1540,263 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        // Initialize audio player when document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('audio1');
+            
+            // Add error handling
+            audio.addEventListener('error', function(e) {
+                console.error('Audio Error:', e);
+                const errorMessage = 'Error loading audio file: ';
+                switch (e.target.error.code) {
+                    case e.target.error.MEDIA_ERR_ABORTED:
+                        console.error(errorMessage + 'You aborted the audio playback');
+                        break;
+                    case e.target.error.MEDIA_ERR_NETWORK:
+                        console.error(errorMessage + 'A network error caused the audio download to fail');
+                        break;
+                    case e.target.error.MEDIA_ERR_DECODE:
+                        console.error(errorMessage + 'The audio playback was aborted due to a corruption problem');
+                        break;
+                    case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                        console.error(errorMessage + 'The audio file cannot be found or is not supported');
+                        break;
+                    default:
+                        console.error(errorMessage + 'An unknown error occurred');
+                        break;
+                }
+            });
+
+            // Add loaded event
+            audio.addEventListener('loadeddata', function() {
+                console.log('Audio loaded successfully');
+            });
+
+            // Add canplay event
+            audio.addEventListener('canplay', function() {
+                console.log('Audio can play');
+            });
+        });
+
+        // Using the newer toggleAudio implementation with simulation
+
+        // Using the newer toggleMute implementation
+
+        // Using the newer formatTime implementation
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, captionText) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            var captionTextElement = document.getElementById("caption");
+            
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            captionTextElement.innerHTML = captionText || "";
+        }
+
+        function closeImageModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function submitHiringForm(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var experience = document.getElementById('experience').value;
+            var message = document.getElementById('message').value;
+            var whatsappNumber = '+919567819998'; // <-- Replace with your WhatsApp number (country code + number, no + or 0)
+            var text = `Hiring Application%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AExperience: ${experience}%0AWhy Join: ${message}`;
+            window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+        }
+
+        // Review Popup Functions
+        let currentRating = 0;
+
+        function openReviewPopup() {
+            document.getElementById('reviewPopup').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeReviewPopup() {
+            document.getElementById('reviewPopup').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable background scrolling
+            resetReviewForm();
+        }
+
+        function setRating(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('.review-stars .star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function resetReviewForm() {
+            document.getElementById('reviewForm').reset();
+            currentRating = 0;
+            const stars = document.querySelectorAll('.review-stars .star');
+            stars.forEach(star => star.classList.remove('active'));
+        }
+
+        // Show review popup after 5 seconds of page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                // Check if popup has been shown before (using localStorage)
+                if (!localStorage.getItem('reviewPopupShown')) {
+                    openReviewPopup();
+                    localStorage.setItem('reviewPopupShown', 'true');
+                }
+            }, 5000);
+        });
+
+        // Handle review form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewName').value;
+            const reviewText = document.getElementById('reviewText').value;
+            
+            if (currentRating === 0) {
+                alert('Please select a star rating');
+                return;
+            }
+            
+            if (!name || !reviewText) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // In a real application, you would send this data to your server
+            console.log('Review submitted:', { name, rating: currentRating, review: reviewText });
+            
+            // Show thank you message
+            alert('Thank you for your review!');
+            
+            // Close popup and reset form
+            closeReviewPopup();
+        });
+
+        // Close popup when clicking outside
+        window.addEventListener('click', function(event) {
+            const reviewPopup = document.getElementById('reviewPopup');
+            if (event.target === reviewPopup) {
+                closeReviewPopup();
+            }
+        });
+    </script>
+
+    <!-- Audio Player Modal -->
+    <div id="audioPlayerModal" class="audio-player-modal">
+        <div class="audio-player-content">
+            <div class="audio-info">
+                <h3 class="audio-name"></h3>
+                <p class="audio-role"></p>
+            </div>
+            <div class="audio-controls">
+                <div class="progress-container">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="time-display">
+                        <span class="current-time">0:00</span>
+                        <span class="duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn btn-primary play-btn" onclick="toggleAudio(currentAudioId)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="volume-control">
+                        <button class="btn btn-link" onclick="toggleMute(currentAudioId)">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" class="form-range" min="0" max="100" value="100" 
+                               oninput="setVolume(currentAudioId, this.value)">
+                    </div>
+                    <button class="btn btn-link" onclick="closeAudioPlayer()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close" onclick="closeImageModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Review Popup Modal -->
+    <div id="reviewPopup" class="review-popup">
+        <div class="review-popup-content">
+            <span class="close-popup" onclick="closeReviewPopup()">&times;</span>
+            <div class="review-popup-body">
+                <h3>Leave a Review</h3>
+                <p>We'd love to hear about your experience with Heal & Grow. Please share your feedback with us!</p>
+                <div class="review-stars">
+                    <span class="star" onclick="setRating(1)">&#9733;</span>
+                    <span class="star" onclick="setRating(2)">&#9733;</span>
+                    <span class="star" onclick="setRating(3)">&#9733;</span>
+                    <span class="star" onclick="setRating(4)">&#9733;</span>
+                    <span class="star" onclick="setRating(5)">&#9733;</span>
+                </div>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <input type="text" id="reviewName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="reviewText" placeholder="Share your experience with us..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Elements -->
+    <div style="display: none;">
+        <audio id="audio1" preload="auto">
+            <source src="audio/sarah-testimonial.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="audio2" preload="auto">
+            <source src="audio/michael-testimonial.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="audio3" preload="auto">
+            <source src="audio/priya-testimonial.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="audio4" preload="auto">
+            <source src="audio/david-testimonial.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+   
 </body>
 
 </html>
+
+
+
+
