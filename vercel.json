@@ -1,25 +1,31 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "startup2-1.0.0/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/startup2-1.0.0/index.html"
-    },
-    {
-      "src": "/new-landing.html",
-      "dest": "/startup2-1.0.0/new-landing.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/startup2-1.0.0/$1"
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+    "rewrites": [
+        {
+            "source": "/",
+            "destination": "/startup2-1.0.0/index.html"
+        },
+        {
+            "source": "/new-landing.html",
+            "destination": "/startup2-1.0.0/new-landing.html"
+        },
+        {
+            "source": "/new-landing",
+            "destination": "/startup2-1.0.0/new-landing.html"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/startup2-1.0.0/$1"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=3600"
+                }
+            ]
+        }
+    ]
 }
